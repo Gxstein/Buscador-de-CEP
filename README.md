@@ -39,6 +39,11 @@ CPF/
 2. Acesse a pasta do projeto.
 3. Abra o arquivo `index.html` no navegador.
 
+## Deploy
+
+Projeto publicado na Vercel:  
+`https://buscador-de-cep-app.vercel.app/`
+
 ## Como usar
 
 1. Digite um CEP valido no campo de busca.
