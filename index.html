@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de CEP</title>
+    <meta
+      name="description"
+      content="Aplicacao web para consulta de CEP com integracao a API ViaCEP."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="hero__eyebrow">ViaCEP REST API</p>
+        <h1>Buscador de CEP</h1>
+        <p class="hero__description">
+          Consulte um CEP em segundos e visualize endereco, bairro, cidade e
+          estado com uma interface simples e objetiva.
+        </p>
+      </header>
+
+      <main class="search-panel">
+        <section class="search-card" aria-labelledby="search-title">
+          <div class="search-card__header">
+            <h2 id="search-title">Consultar endereco</h2>
+            <p>Digite um CEP valido para buscar os dados diretamente na ViaCEP.</p>
+          </div>
+
+          <form id="cep-form" class="search-form" novalidate>
+            <label class="field" for="cep-input">
+              <span>CEP</span>
+              <input
+                id="cep-input"
+                name="cep"
+                type="text"
+                inputmode="numeric"
+                autocomplete="postal-code"
+                maxlength="9"
+                placeholder="00000-000"
+                aria-describedby="status-message"
+              />
+            </label>
+
+            <div class="search-form__actions">
+              <button type="submit" id="submit-button">Buscar CEP</button>
+              <button type="button" id="clear-button" class="button-secondary">
+                Limpar
+              </button>
+            </div>
+          </form>
+
+          <p
+            id="status-message"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+          >
+            Informe um CEP para iniciar a consulta.
+          </p>
+        </section>
+
+        <section class="result-card" aria-labelledby="result-title">
+          <div class="result-card__header">
+            <h2 id="result-title">Resultado da busca</h2>
+            <span class="result-badge" id="result-badge">Aguardando consulta</span>
+          </div>
+
+          <dl class="address-grid" id="address-grid">
+            <div class="address-item">
+              <dt>Endereco</dt>
+              <dd id="logradouro">-</dd>
+            </div>
+            <div class="address-item">
+              <dt>Bairro</dt>
+              <dd id="bairro">-</dd>
+            </div>
+            <div class="address-item">
+              <dt>Cidade</dt>
+              <dd id="localidade">-</dd>
+            </div>
+            <div class="address-item">
+              <dt>Estado</dt>
+              <dd id="uf">-</dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
